@@ -1,0 +1,18 @@
+[Unit]
+Description=Image App Server
+After=cloud-final.service
+
+[Service]
+WorkingDirectory=/home/ec2-user/basic-express-image-uploader
+ExecStart=/home/ec2-user/basic-express-image-uploader/server.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=basic-image-uploader
+User=ec2-user
+EnvironmentFile=/home/ec2-user/app.env
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=cloud-init.target
