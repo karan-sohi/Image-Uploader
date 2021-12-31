@@ -1,13 +1,13 @@
 # Image-Uploader
-Setup the Image-Uploader application on 3 different EC2 instances on AWS with Packer and Terraform. 
+Deploys a 3 Tier Web App on AWS with Packer and Terraform. 
 
-## nfrastructure on AWS
+## Infrastructure on AWS
 - Nginx on public subnet
 - Node app on private subnet
 - MongoDB on different private subnet
 
-##Packer
-Packer creates 3 different AMIs and setup a VPC with 3 subnets to deploy the app. 
+## Packer
+Packer creates 3 different AMIs, and it configures them to run the application by running the corresponding script from the folder.  
 There are 3 hcl files in the Packer folder
 - nginx.pkr.hcl - For the nginx reverse proxy
 - app.pkr.hcl - For the Node app
